@@ -13,3 +13,9 @@ data "aws_iam_policy_document" "allow_decrypt" {
     resources = ["${var.datadog_kms_key_arn}"]
   }
 }
+
+data "archive_file" "lambda_code" {
+  type        = "zip"
+  source_file = "${path.module}/script/lambda_function.py"
+  output_path = "${path.module}/.terraform/generated/lambda_function.zip"
+}

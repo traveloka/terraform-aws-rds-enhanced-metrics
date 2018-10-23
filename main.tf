@@ -26,9 +26,9 @@ module "lambda_function_name" {
 resource "aws_lambda_function" "send_enhanced_rds_to_datadog" {
   function_name    = "${module.lambda_function_name.name}"
   role             = "${module.datadog_lambda_role.role_arn}"
-  filename         = "files/lambda_files.zip"
-  source_code_hash = "${base64sha256(file("files/lambda_files.zip"))}"
-  handler          = "lambda_files/lambda_function.lambda_handler"
+  filename         = ".terraform/generated/lambda_function.zip"
+  source_code_hash = "${base64sha256(file(".terraform/generated/lambda_function.zip"))}"
+  handler          = "lambda_function.lambda_handler"
   runtime          = "python2.7"
   memory_size      = 128
   timeout          = 10
