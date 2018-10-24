@@ -25,5 +25,5 @@ variable "datadog_kms_key_arn" {
 
 variable "kms_encrypted_keys" {
   type        = "string"
-  description = "The encrypted Datadog keys"
+  description = "The encrypted Datadog API key and Datadog application key. Go through README for details"
 }

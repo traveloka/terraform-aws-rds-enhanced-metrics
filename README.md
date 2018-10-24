@@ -10,3 +10,6 @@ Please look at the complete example
 
 # Authors
 - [Febry Antonius](https://github.com/febryantonius)
+
+# References
+- [Using Enhanced RDS Monitoring with Datadog and How to Encrypt Datadog keys with KMS](https://aws.amazon.com/blogs/aws/using-enhanced-rds-monitoring-with-datadog/)
