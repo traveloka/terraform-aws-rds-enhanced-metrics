@@ -45,8 +45,13 @@ resource "aws_lambda_function" "send_rds_enhanced_to_datadog" {
     ProductDomain = "${var.product_domain}"
     Environment   = "${var.environment}"
     Description   = "${var.description}"
-    ManagedBy     = "Terraform"
+    ManagedBy     = "terraform"
   }
+}
+
+resource "aws_cloudwatch_log_group" "lambda_function-send_rds_enhanced_metrics" {
+  name              = "/aws/lambda/${aws_lambda_function.send_rds_enhanced_to_datadog.function_name}"
+  retention_in_days = "${var.retention_in_days}"
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch" {

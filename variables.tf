@@ -27,3 +27,9 @@ variable "kms_encrypted_keys" {
   type        = "string"
   description = "The encrypted Datadog API key and Datadog application key. Go through README for details"
 }
+
+variable "retention_in_days" {
+  type        = "string"
+  description = "Specifies the number of days you want to retain lambda function log"
+  default     = "14"
+}
